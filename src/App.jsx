@@ -323,7 +323,7 @@ function PasswordGate({ onUnlock, playing, onToggle }) {
           value={val}
           onChange={e=>{ setVal(e.target.value); setErr(false); }}
           onKeyDown={e=>e.key==="Enter"&&attempt()}
-          placeholder="e.g. 5 feb 2023"
+          placeholder="e.g. 24/2/2023"
           style={{
             width:"100%", padding:".85rem 1.2rem", borderRadius:14,
             border:err?"2px solid #ff4d88":"1.5px solid rgba(255,182,209,0.5)",
@@ -412,15 +412,15 @@ function Hero() {
 
 /* ─── TIMELINE ───────────────────────────────────────────────────────── */
 const MEMORIES = [
-  { date:"5/2/2023",  emoji:"💌", title:"First Time We Met on Telegram 📱",
+  { date:"5/2/2023",  emoji:"💌",img:"/photos/mem1.png", title:"First Time We Met on Telegram 📱",
     text:"Maine Telegram pe circle ka formula pucha tha toh tumne reply kiya tha sabse pehle. Fir tum mujhe ladki samajh ke baat karne lagi — aur jab maine bata diya ki main ladka hoon, tumne block kar diya! 😭😂\n\nFir hum group mein tumko jaake ulta sidha bolne lage aur fir tum dobara unblock ki — aur phir baat start hua. lol 🙈" },
-  { date:"18/2/2023", emoji:"🥲", title:"I Disappeared 👻",
+  { date:"18/2/2023", emoji:"🥲",img:"/photos/mem2.png", title:"I Disappeared 👻",
     text:"Us time hum tumhe lekar zyada serious nahi the. Bole ki humko padhna hai aur gayab ho gaye.\n\nTum udas ho gayi thi — apne birthday pe har ghante check karti thi ki mera message aaya hoga. Lekin humne kiya nahi 🥲 But uske 10 din baad hi aa gaye! lol" },
-  { date:"7/3/2023",  emoji:"🌈", title:"Holi Wali Vibes 🎨",
+  { date:"7/3/2023",  emoji:"🌈",img:"/photos/mem3.png", title:"Holi Wali Vibes 🎨",
     text:"Tumhe bahut mann karta hai holi khelne ka, lekin tum khel nahi paati — koi hota hi nahi khelne wala.\n\nToh jab hum holi khel rahe the apne ghar mein — tumhe video aur photos bhejte the. Tumhe dekhne mein maza aata tha lol 😂" },
-  { date:"7/7/2023",  emoji:"🎬", title:"Twilight Nights 🌙",
+  { date:"7/7/2023",  emoji:"🎬",img:"/photos/mem4.png", title:"Twilight Nights 🌙",
     text:"Hum saath mein Twilight dekhte the raat mein, aur der raat tak baat bhi karte the.\n\nBahut maza aata tha yaar, kasam se — unforgettable memories hain woh sab 😭❤️" },
-  { date:"12/11/2023",emoji:"💍", title:"My Birthday — Cringe par Beautiful 🎂",
+  { date:"12/11/2023",emoji:"💍",img:"/photos/mem5.png", title:"My Birthday — Cringe par Beautiful 🎂",
     text:"Mere birthday pe tum bahut sara effort karke likha tha. Aur humne achhe se reply bhi nahi diya — tum udas ho gayi thi.\n\nLekin fir hum raat mein aaye, lagbhag 1 baje. Aur hamlog 7 FERE ki jagah 7 KASAM KHAYE 😭😂😂 Bahut cute tha woh moment ❤️" },
 ];
 
@@ -437,17 +437,11 @@ function MemoryCard({ m, side }) {
       <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:"1.1rem",color:"#ff4d88",marginBottom:".7rem",lineHeight:1.35}}>
         {m.title}
       </h3>
-      <div style={{
-        width:"100%",height:110,borderRadius:14,
-        background:"linear-gradient(135deg,#ffd6e7,#f3e8ff)",
-        border:"2px dashed #ff6fa5",marginBottom:".9rem",
-        display:"flex",alignItems:"center",justifyContent:"center",
-        flexDirection:"column",gap:".25rem",color:"#7a5263",fontSize:".85rem"
-      }}>
-        <span style={{fontSize:"1.6rem"}}>📸</span>
-        <span>Photo placeholder</span>
-        <span style={{fontSize:".75rem",opacity:.65}}>Add your photo here later</span>
-      </div>
+<img
+  src={m.img}
+  alt={m.title}
+  style={{width:"100%", height:180, objectFit:"cover", borderRadius:14, marginBottom:".9rem"}}
+/>
       <p style={{lineHeight:1.8,color:"#7a5263",fontSize:".9rem",whiteSpace:"pre-line"}}>{m.text}</p>
     </div>
   );
@@ -474,17 +468,17 @@ const LETTER = `Jyoti,
 
 Kuch cheezein hoti hain jo hum bol nahi paate — par feel karte hain poori gehraai se.
 
-Tu ek aisi ladki hai jo duniya ke saamne haste hue aage badhti hai, par andar se bahut zyada feel karti hai. Tu express nahi karti easily — par jo love karti hai, woh sach mein pure dil se karti hai.
+Tum ek aisi ladki ho jo duniya ke saamne haste hue aage badhti hai, par andar se bahut zyada feel karti ho. Tum express nahi karti easily — par jo love karti ho, woh sach mein pure dil se karti ho yar.
 
-Jab tu kisi ki parwaah karti hai, toh uss mein itni caring energy hoti hai ki banda bas khud ko lucky feel kare. Tu kisi ke liye raat bhar jaag sakti hai, unke liye effort kar sakti hai — bina kuch zyada bolein bhi.
+Jab tum kisi ki parwaah karti ho, toh uss mein itni caring energy hoti hai ki insan bas khud ko bohot lucky feel krta hai. Tum kisi ke liye raat bhar jaag sakti ho, unke liye effort karti ho — bina kuch zyada bole.
 
-Tu thodi savage bhi hai — toh life aur interesting lagti hai 😄 Teri baatein, teri reactions, teri silences — sab kuch memorable hai.
+Tum thodi savage bhi ho — toh life aur interesting lagti hai 😄 Tmhari baatein, tmhare reactions, tmhare silences — sab kuch memorable hai.
 
-Yeh website sirf ek chhoti si koshish hai — ki tujhe feel ho ki tere woh chote wale moments, woh raat ki baatein, woh holi ki videos — hum bhoolein nahi hain.
+Yeh website sirf ek chhoti si koshish hai — ki tuko feel ho ki tmhare woh chote wale moments, woh raat ki baatein, woh holi ki videos — hum bhoolein nahi hain.
 
 Hum jaante hain hum hamesha perfect nahi the — but we're here, we're trying, and that counts.
 
-Happy everything, Jyoti 🌸
+Happy birthday, Jyoti 🌸
 
 — deepansh ❤️`;
 
@@ -526,14 +520,14 @@ function LoveLetter() {
 
 /* ─── REASONS ────────────────────────────────────────────────────────── */
 const REASONS = [
-  { emoji:"🌟", title:"Tu genuine hai",          text:"Duniya bhar ki dulcet mein, tu real hai. Koi show off nahi, koi drama nahi — just tu, as you are." },
-  { emoji:"💪", title:"Tu silently strong hai",  text:"Tu mushkilon mein bhi hasti rehti hai aur hum jaante hain ki yeh asaan nahi hota." },
-  { emoji:"🌙", title:"Raat ki baatein",          text:"Teri raat ki baatein, woh late-night conversations — unhe yaad karna hi sab kuch feel kara deta hai." },
-  { emoji:"😂", title:"Teri reactions priceless", text:"Teri har reaction — chahe khushi ki ho ya surprise ki — itni pure lagti hai, hum bas muskura dete hain." },
-  { emoji:"❤️", title:"Poore dil se pyaar karti", text:"Tu dil lagate waqt zyada nahi bolti — par jab laati hai toh sach mein full commitment ke saath." },
-  { emoji:"🌸", title:"Chhote wale gestures",     text:"Teri chhoti chhoti cheezein — woh birthday effort, woh bar bar check karna — hum notice karte hain sab." },
-  { emoji:"🎯", title:"Tu honest hai",            text:"Seedhi baat karti hai, bina ghuma ke. Yeh quality rare aur genuinely valuable hai." },
-  { emoji:"🏠", title:"Tere saath home feel",     text:"Jab baat karti hai, ek ajeeb si sukoon milti hai — jaise sab theek ho jaayega." },
+  { emoji:"🌟", title:"Tum genuine ho",          text:"Duniya bhar ke natak mein, sirf tum real me mere sath ho. Koi show off nahi, koi drama nahi — just tum, as you are." },
+  { emoji:"💪", title:"Tum silently strong ho",  text:"Tum mushkilon mein bhi hasti rehti ho aur hum jaante hain ki yeh asaan nahi hota." },
+  { emoji:"🌙", title:"Raat ki baatein",          text:"Tmhari raat ki baatein, woh late-night conversations — unhe yaad karna hi sab kuch feel kara deta hai." },
+  { emoji:"😂", title:"Tmhare reactions priceless", text:"Tmhari har reaction — chahe khushi ki ho ya surprise ki — itni pure lagti hai, hum bas muskura dete hain." },
+  { emoji:"❤️", title:"Poore dil se pyaar karti ho", text:"Tum dil lagate waqt zyada nahi bolti — par jab laati hai toh sach mein full commitment ke saath." },
+  { emoji:"🌸", title:"Chhote wale gestures",     text:"Tmhari chhoti chhoti cheezein — woh birthday effort, woh bar bar check karna — hum notice karte hain sab." },
+  { emoji:"🎯", title:"Tum honest ho",            text:"Seedhi baat karti ho, bina ghuma ke. Yeh quality rare aur genuinely valuable hai." },
+  { emoji:"🏠", title:"Tmhare saath home feel",     text:"Jab baat karti ho, ek ajeeb sa sukoon milta hai — jaise sab theek ho jaayega." },
 ];
 function Reasons() {
   const [cur,setCur]=useState(0); const [k,setK]=useState(0);
@@ -614,9 +608,9 @@ function Counter() {
 const PROMISES = [
   { emoji:"✈️", title:"Travel Together",       text:"Ek din hum saath kahin door jayenge — pahad ho ya beach — sirf hum dono aur woh khuli hawa." },
   { emoji:"🤝", title:"Meet Soon",              text:"Yeh distance zyada der nahi rahega. Ek din aankhein uthaungi aur tum saamne hogi — woh din aayega, promise." },
-  { emoji:"🌃", title:"Late Night Walks",       text:"Raat mein akele ghumna alag hi feeling hai. Teri saath? Woh toh kuch aur hi hoga." },
+  { emoji:"🌃", title:"Late Night Walks",       text:"Raat mein akele ghumna alag hi feeling hai. aur tmhare saath? Woh toh kuch aur hi hoga." },
   { emoji:"🎬", title:"Movie Nights IRL",       text:"Phone pe Twilight dekhna tha. Ab real mein saath baithke dekhenge — popcorn ke saath, blanket ke andar." },
-  { emoji:"🏡", title:"Build a Life Together",  text:"Yeh dreams sab milke banana hai — chota sa ghar, bade se sapne, aur tu mere saath. Bas yahi chahiye." },
+  { emoji:"🏡", title:"Build a Life Together",  text:"Yeh dreams sab milke banana hai — chota sa ghar, bade se sapne, aur tum mere saath. Bas yahi chahiye." },
 ];
 function Promises() {
   return (
